@@ -1,0 +1,27 @@
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--foreground);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        background-color 0.3s ease;
+
+    @media (pointer: coarse) {
+        display: none; // hide on touch devices
+    }
+
+    &.hovering {
+        width: 48px;
+        height: 48px;
+        background-color: transparent;
+        border: 1px solid var(--foreground);
+        mix-blend-mode: difference;
+    }
+}
