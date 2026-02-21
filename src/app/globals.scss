@@ -28,7 +28,7 @@ a {
   color: inherit;
   text-decoration: none;
   transition: opacity 0.2s ease;
-  
+
   &:hover {
     opacity: 0.7;
   }
@@ -36,9 +36,56 @@ a {
 
 // Utility typography mixins
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
+  html {
+    font-size: 16px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-outfit);
     font-weight: 500;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
+    /* Tighter tracking for display impact */
+    margin: 0;
+  }
+
+  /* Extreme Display Sizes */
+  .text-display-lg {
+    font-size: clamp(4rem, 12vw, 10rem);
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+    font-weight: 600;
+  }
+
+  .text-display-md {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+  }
+
+  .text-prose {
+    font-family: var(--font-inter);
+    font-size: clamp(1.125rem, 2vw, 1.35rem);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    font-weight: 300;
+  }
+
+  /* Hairline Borders for Brutalist Luxury */
+  .border-hairline {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .border-hairline-b {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
