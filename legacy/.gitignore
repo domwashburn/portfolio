@@ -1,0 +1,21 @@
+# MacOS
+.DS_Store
+DS_Store
+
+# packages
+node_modules/
+
+# Compiled Files
+.server/
+.temp/
+
+# Source Maps
+# *.map
+
+# Dev Config Files
+
+# Logs
+npm-debug.log
+
+# Testing
+coverage/
