@@ -1,0 +1,111 @@
+.container {
+    display: flex;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.hero {
+    max-width: 56rem;
+}
+
+.headline {
+    font-family: var(--font-outfit);
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: var(--foreground);
+    margin-bottom: 3rem;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+
+    .italic {
+        font-family: var(--font-inter);
+        font-style: italic;
+        font-weight: 300;
+        text-transform: lowercase;
+        color: var(--accent);
+        letter-spacing: -0.02em;
+    }
+}
+
+.content {
+    max-width: 36rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.intro {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--muted);
+    font-weight: 400;
+
+    .strong {
+        color: var(--foreground);
+        font-weight: 500;
+    }
+}
+
+.quote {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--accent);
+    border-left: 2px solid rgba(255, 255, 255, 0.15);
+    padding-left: 1.5rem;
+    font-style: italic;
+}
+
+.actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.primaryButton {
+    font-family: var(--font-outfit);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    background: var(--foreground);
+    color: var(--background);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }
+}
+
+.secondaryButton {
+    font-family: var(--font-outfit);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted);
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0%;
+        height: 1px;
+        background: currentColor;
+        transition: width 0.3s ease;
+    }
+
+    &:hover {
+        color: var(--foreground);
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
